@@ -15,7 +15,7 @@ st.markdown("---")
 # 2.Data Loading Funtion
 @st.cache_data
 def load_data():
-    df = pd.read_csv("data/cryptodata.csv")
+    df = pd.read_csv("cryptodata.csv")
     df['Date'] = pd.to_datetime(df['Date'], format='%Y-%m-%d %I-%p', errors='coerce')
     df = df.dropna(subset=['Date'])
     return df
